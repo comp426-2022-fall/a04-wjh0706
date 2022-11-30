@@ -15,19 +15,19 @@ app.get('/app/roll/', function(req, res) {
 })
 
 app.post('/app/roll/', function(req, res) {
-	res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)))
+	res.status(200).send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)))
 })
 
 app.get('/app/roll/:sides/', function(req, res) {
-res.status(200).send(roll(parseInt(req.body.sides), 2, 1))
+	res.status(200).send(roll(parseInt(req.params.sides), 2, 1))
 })
 
 app.get('/app/roll/:sides/:dice/', function(req, res) {
-	res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), 1))
+	res.status(200).send(roll(parseInt(req.params.sides), parseInt(req.params.dice), 1))
 })
 
 app.get('/app/roll/:sides/:dice/:rolls/', function(req, res) {
-	res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)))
+	res.status(200).send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)))
 })
 
 app.get('*', function(req, res) {
