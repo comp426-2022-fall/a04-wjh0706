@@ -12,7 +12,7 @@ app.get('/app/',function (req, res) {
 
 app.use(express.urlencoded({extended: true}))
 
-app.post('/app/roll/', function(req, res) {
+app.get('/app/roll/', function(req, res) {
 	res.status(200).send(roll(6, 2, 1))
 })
 
