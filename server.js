@@ -18,7 +18,7 @@ app.post('/app/roll/', function(req, res) {
 	const sides = Number(req.body.sides)||6
 	const dice = Number(req.body.dice)||2
 	const rolls = Number(req.body.rolls)||1
-	res.send(roll(sides, dice, rolls))
+	res.status(200).send(roll(sides, dice, rolls))
 })
 
 app.get('/app/roll/:sides/', function(req, res) {
