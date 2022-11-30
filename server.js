@@ -12,11 +12,14 @@ app.get('/app/',function (req, res) {
 
 app.use(express.urlencoded({extended: true}))
 
+app.post('/app/roll/', function(req, res) {
+	res.status(200).send(roll(6, 2, 1))
+})
 
 app.post('/app/roll/', function(req, res) {
-	const sides = Number(req.body.sides)||6
-	const dice = Number(req.body.dice)||2
-	const rolls = Number(req.body.rolls)||1
+	const sides = Number(req.body.sides)
+	const dice = Number(req.body.dice)
+	const rolls = Number(req.body.rolls)
 	res.status(200).send(roll(sides, dice, rolls))
 })
 
