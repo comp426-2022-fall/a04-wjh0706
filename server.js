@@ -10,9 +10,7 @@ app.get('/app/',function (req, res) {
 	res.status(200).send('200 OK');
 })
 
-app.get('*', function(req, res) {
-	res.status(404).send("404 NOT FOUND")
-})
+
 
 app.post('/app/roll/', function(req, res) {
 	const sides = Number(req.body.sides)||6
@@ -37,6 +35,10 @@ app.get('/app/roll/:sides/:dice/:rolls/', function(req, res) {
 	const dice = Number(req.params.dice)
 	const rolls = Number(req.params.rolls)
 	res.status(200).send(roll(sides, dice, rolls))
+})
+
+app.get('*', function(req, res) {
+	res.status(404).send("404 NOT FOUND")
 })
 
 app.listen(port)
