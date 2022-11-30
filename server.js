@@ -10,8 +10,6 @@ app.get('/app/',function (req, res) {
 	res.status(200).send('200 OK');
 })
 
-
-
 app.use(express.urlencoded({extended: true}))
 
 app.get('/app/roll/', function(req, res) {
