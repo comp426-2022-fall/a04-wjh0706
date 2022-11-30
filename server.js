@@ -10,9 +10,7 @@ app.get('/app/',function (req, res) {
 	res.status(200).send('200 OK');
 })
 
-app.get('*', function(req, res) {
-	res.status(404).send("404 NOT FOUND")
-})
+
 
 app.use(express.urlencoded({extended: true}))
 
@@ -45,6 +43,8 @@ app.get('/app/roll/:sides/:dice/:rolls/', function(req, res) {
 	res.status(200).send(roll(sides, dice, rolls))
 })
 
-
+app.get('*', function(req, res) {
+	res.status(404).send("404 NOT FOUND")
+})
 
 app.listen(port)
